@@ -10,8 +10,9 @@ body {
   min-height: 100vh;
   background: black;
   color: #ddd;
+  overflow: hidden;
 }
-body::before {
+/* body::before {
   content: '';
   position: absolute;
   top: 0;
@@ -30,8 +31,8 @@ body::after {
   height: 100%;
   background: linear-gradient(rgb(36, 36, 36), rgb(86, 86, 86));
   clip-path: circle(20% at 10% 10%);
-}
-.content > img {
+} */
+.card > .content > img {
   vertical-align: top;
   width: 200px;
 }
@@ -47,19 +48,26 @@ body::after {
 }
 .container .card {
   /* position: relative; */
-  /* width: 200px;
-  height: 200px; */
   box-shadow: rgba(0, 0, 0, 0.6) 20px 20px 50px;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  border-top: 2px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 2px solid rgba(255, 255, 255, 0.8);
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
 }
-.container .card:hover img {
-
+.container .card .content {
+  transition: 0.5s ease-in;
 }
+.container .card:hover .content{
+  transform:scale(1.03);
+  /* z-index: 4; */
+}
+.container .card:hover {
+  box-shadow: rgba(255, 255, 255, 0.5) 0px 3px 5px;
+  border: 1px solid white;
+}
+
 
 
 
